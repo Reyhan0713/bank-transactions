@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Final Task</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <main class="transactions-page">
+      <section class="transactions">
+        <div class="transactions__header">
+          <h1 class="transactions__title">تراکنش‌های بانکی</h1>
+
+          <button
+            class="transactions__toggle"
+            id="load-transactions"
+            type="button"
+          >
+            نمایش تراکنش‌ها
+          </button>
+        </div>
+
+        <div id="loading" hidden>در حال دریافت اطلاعات...</div>
+
+        <p id="error-message" hidden>دریافت اطلاعات با خطا مواجه شد!</p>
+
+        <div class="transactions__content" id="transactions-content" hidden>
+          <div class="transactions__top">
+            <div>
+              <h2 class="transactions__subtitle">لیست تراکنش‌ها</h2>
+
+              <span class="transactions__count" id="transactions-count"></span>
+            </div>
+
+            <div class="search">
+              <span class="search__icon">⌕</span>
+
+              <input
+                class="search__input"
+                id="search-input"
+                type="search"
+                placeholder="جستجو در تراکنش‌ها..."
+              />
+            </div>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="transactions-table">
+              <thead>
+                <tr>
+                  <th>ردیف</th>
+                  <th>نوع تراکنش</th>
+                  <th>
+                    <button class="sort-button" type="button" data-sort="price">
+                      مبلغ
+                      <span class="sort-icon">⌄</span>
+                    </button>
+                  </th>
+                  <th>شماره پیگیری</th>
+                  <th>
+                    <button class="sort-button" type="button" data-sort="date">
+                      تاریخ
+                      <span class="sort-icon">⌄</span>
+                    </button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="transactions-list"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
